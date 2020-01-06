@@ -12,6 +12,24 @@ window.Shop = {
         });
 
     },
+
+    addProductToCart: function (productId){
+        var request ={
+            // todo : take customer id dynamically somehow
+            customerId: 38,
+            productId: productId
+        };
+        $.ajax({
+            url:Shop.API_BASE_URL + "/carts",
+            method:"PUT",
+            contentType: "application/json",
+            date: JSON.stringify(request)
+        }).done(function () {
+            window.location.replace("cart.html");
+
+
+        })
+    },
     getProductHtml: function (product) {
       return `<div class="col-md-3 col-sm-6">
                     <div class="single-shop-product">
