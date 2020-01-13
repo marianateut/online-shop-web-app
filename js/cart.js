@@ -49,7 +49,7 @@ window.Cart = {
     displayProducts: function (products) {
         var productsHtml = "";
 
-        products.forEach(oneproduct => productsHtml += Shop.getProductHtml(oneproduct));
+        products.forEach(oneproduct => productsHtml += Cart.getProductHtml(oneproduct));
 
         $(".shop_table.cart tbody") .html(productsHtml);
     },
@@ -57,4 +57,4 @@ window.Cart = {
 
 
 };
-Cart.getCarts();
+Cart.getCart();
